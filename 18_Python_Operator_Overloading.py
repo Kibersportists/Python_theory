@@ -19,21 +19,29 @@ class Fraction:
         self.denominator = denominator
 
     def __add__(self, other):
-    
+        new_numerator = self.numerator*other.denominator + self.denominator*other.numerator
+        new_denominator = self.denominator*other.denominator
+        return Fraction(new_numerator, new_denominator)    
 
     def __sub__(self, other):
-    
+        new_numerator = self.numerator*other.denominator - self.denominator*other.numerator
+        new_denominator = self.denominator*other.denominator
+        return Fraction(new_numerator, new_denominator) 
     
     #cross multiply
     def __mul__(self, other):
-
+        new_numerator = self.numerator*other.numerator
+        new_denominator = self.denominator*other.denominator
+        return Fraction(new_numerator, new_denominator) 
 
     #reciprocate and cross multiply; truediv = /, floordiv = //, mod = %
     def __truediv__(self, other):
-
+        new_numerator = self.numerator*other.denominator
+        new_denominator = self.denominator*other.numerator
+        return Fraction(new_numerator, new_denominator) 
 
     def __str__(self): #for printing and converting to str, represent with a/b
-
+        return str(self.numerator) + "/" + str(self.denominator)
 
     def __repr__(self):
         return str(self)
@@ -46,29 +54,29 @@ a = Fraction(3, 4)
 b = Fraction(2, 7)
 c = Fraction(5)
 
-# print(a)    #3/4
-# print(b)    #2/7
-# print(c)    #5/1
+print(a)    #3/4
+print(b)    #2/7
+print(c)    #5/1
 
 
-# print("\nTesting Add:")
-# print("a+b =", a + b)   #a+b = 29/28
-# print("b+a =", b + a)   #b+a = 29/28 
+print("\nTesting Add:")
+print("a+b =", a + b)   #a+b = 29/28
+print("b+a =", b + a)   #b+a = 29/28 
 
 
-# print("\nTesting Subtract;")
-# print("a-b =", a - b)   #a-b = 13/28
-# print("b-a =", b - a)   #b-a = -13/28
+print("\nTesting Subtract;")
+print("a-b =", a - b)   #a-b = 13/28
+print("b-a =", b - a)   #b-a = -13/28
 
 
-# print("\nTesting Multiply:")
-# print("a*b =", a * b)   #a*b = 6/28
-# print("b*a =", b * a)   #b*a = 6/28
+print("\nTesting Multiply:")
+print("a*b =", a * b)   #a*b = 6/28
+print("b*a =", b * a)   #b*a = 6/28
 
 
-# print("\nTesting Divide:")
-# print("a/b =", a / b)   #a/b = 21/8
-# print("b/a =", b / a)   #b/a = 8/21
+print("\nTesting Divide:")
+print("a/b =", a / b)   #a/b = 21/8
+print("b/a =", b / a)   #b/a = 8/21
 
 
 
